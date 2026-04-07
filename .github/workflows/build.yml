@@ -1,0 +1,15 @@
+name: Build and Sign APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to use for release name'
+        required: false
+
+jobs:
+  build:
+    uses: deckertron9000-builds/.github/.github/workflows/reusable-build.yml@main
+    with:
+      tag: ${{ inputs.tag }}
+    secrets: inherit
