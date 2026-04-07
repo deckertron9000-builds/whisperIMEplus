@@ -1,0 +1,11 @@
+name: Sync from upstream
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    uses: deckertron9000-builds/.github/.github/workflows/reusable-sync.yml@main
+    secrets: inherit
